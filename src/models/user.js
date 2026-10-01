@@ -3,7 +3,7 @@ const {Schema}=mongoose;// mongoose sein schema ko laya
 const userSchema=new Schema({
     firstName:{
         type:String,
-        require:true,
+        required:true,
         minLength:3,
         maxLength:20,
     },
@@ -14,7 +14,7 @@ const userSchema=new Schema({
     },
     emailId:{
         type:String,
-        require:true,
+        required:true,
         unique:true,
         trim:true,
         lowercase:true,
@@ -34,6 +34,13 @@ const userSchema=new Schema({
     },
     problemSolved:{
         type:[String],
+
+    },
+    password:{
+        type:'string',
+        required:true,
+        minLength:4,
+        maxLength:8,
 
     }
 },
